@@ -11,8 +11,11 @@ struct BaseMapView: View {
     @State var showAnimation=false//3D动画状态布尔值
     @State var animation=0.0//创建变量储存旋转角度
     
-    //动画发生位置坐标抓取
+    //获取动画发生位置坐标
     @State private var Position:CGPoint = CGPoint(x:0,y:0)
+    //更新动画发生位置的暂存变量
+    @State private var x:CGFloat=0
+    @State private var y:CGFloat=0
     
     //计算偏移量用来计算移动后的当前画面
     @State private var defaultOffset: CGSize = .zero
@@ -20,10 +23,6 @@ struct BaseMapView: View {
     //缩放比例
     @State private var defaultScale: CGFloat = 1.0
     @GestureState private var dragScale: CGFloat = 1.0
-    //更新动画发生位置的暂存变量
-    @State private var x:CGFloat=0
-    @State private var y:CGFloat=0
-    
     //itemBarSize
     @State private var itemBarOpacity:CGFloat = 1.0
     @State var itemBarButton = false
@@ -168,9 +167,6 @@ struct BaseMapView: View {
             Gauge(value: count, in: 0...5){
                 Text("\(Int(count))/6")
             }
-//        currentValueLabel: {
-//            Text("\(Int(count))/5")
-//        }
         .gaugeStyle(.accessoryCircularCapacity)
         .progressViewStyle(.linear)
         .tint(.blue)
@@ -201,6 +197,7 @@ struct BaseMapView: View {
                     .offset(x:x,y:y)
             }//if end 动画启动判断
             
+            //道具栏
             VStack {
                 if itemBarButton {
                     Button(action: {
