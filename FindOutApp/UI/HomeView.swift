@@ -9,6 +9,7 @@ struct HomeView: View {
     
     
     @State private var movetoWinterMap = false // 控制进入冬季地图的布尔值
+    @State private var movetoKindergartenMap = false // 控制进入幼儿园地图的布尔值
 
  
     
@@ -123,6 +124,7 @@ struct HomeView: View {
                         }
                         
                         Button(action:{
+                            movetoKindergartenMap = true
                             //点击后发生的动作
                         }){
                             Image(uiImage:UIImage(named:"kingdergartenTest")!)
@@ -204,6 +206,9 @@ struct HomeView: View {
         
         .fullScreenCover(isPresented: $movetoWinterMap) {
             WinterMapView()
+        }
+        .fullScreenCover(isPresented: $movetoKindergartenMap) {
+            kingdergartenMapView()
         }
         
     }//var body end
