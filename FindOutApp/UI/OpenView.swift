@@ -14,13 +14,12 @@ struct OpenView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                
                 Image("openimage")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 //保证图片完整显示，占据整个屏幕
                 //忽略安全区域
-            }
+            }//VStack end
             .edgesIgnoringSafeArea(.all)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.black) // 整个屏幕背景为黑颜色
@@ -36,7 +35,7 @@ struct OpenView: View {
             .navigationDestination(isPresented: $isActive) {
                 LoadingView()
             }
-        }
+        }//NavigationStack end
     }
 }
 

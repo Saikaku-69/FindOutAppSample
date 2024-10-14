@@ -10,7 +10,7 @@ struct BaseMapView: View {
     @State var count : Double=0.0 //更新进度条
     @State var showAnimation=false//3D动画状态布尔值
     @State var animation=0.0//创建变量储存旋转角度
-    
+
     //获取动画发生位置坐标
     @State private var Position:CGPoint = CGPoint(x:0,y:0)
     //更新动画发生位置的暂存变量
@@ -247,6 +247,7 @@ struct BaseMapView: View {
         .frame(maxWidth: .infinity,maxHeight: .infinity)
         .scaledToFill()
         .scaleEffect(defaultScale * dragScale)
+
     }//var body end
     
     //3D动画启动函数（1秒消失）
@@ -263,7 +264,7 @@ struct BaseMapView: View {
             itemBarOpacity = 0.0
             itemBarButton = true
     }
-}//struct ScaleMapView end
+}//struct BaseMapView end
 
 #Preview {
     BaseMapView()
