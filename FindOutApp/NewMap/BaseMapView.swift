@@ -33,7 +33,7 @@ struct BaseMapView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .offset(x: defaultOffset.width + dragOffset.width,y: defaultOffset.height + dragOffset.height)
-        
+
             //路灯显示判定
             if(showLight){
                 Button(
@@ -76,7 +76,6 @@ struct BaseMapView: View {
                 .offset(x: defaultOffset.width + dragOffset.width+385,y: defaultOffset.height + dragOffset.height+72)
             }//if end
             
-            
             //紫色雪人显示判定
             if(showHouse){
                 Button(
@@ -97,8 +96,7 @@ struct BaseMapView: View {
 //                .offset(x:385,y: 72)
                 .offset(x: defaultOffset.width + dragOffset.width+250,y: defaultOffset.height + dragOffset.height+190)
             }//if end
-            
-            
+                        
             //蓝色雪人显示判断
             if(showBlueScarf){
                 Button(
@@ -117,7 +115,6 @@ struct BaseMapView: View {
 //                .offset(x:-50,y: 130)
                 .offset(x: defaultOffset.width + dragOffset.width-50,y: defaultOffset.height + dragOffset.height+130)
             }//if end
-            
             
             //左斜公交车显示判定
             if(showBusLeft){
@@ -140,7 +137,6 @@ struct BaseMapView: View {
                 .offset(x: defaultOffset.width + dragOffset.width-280,y: defaultOffset.height + dragOffset.height-100)
             }//if end
             
-            
             //右斜公交车显示判定
             if(showBusRight){
                 Button(
@@ -157,11 +153,8 @@ struct BaseMapView: View {
                             .frame(width: 47,height: 37)
                             .clipped()
                     })
-                
-//                .offset(x:238,y:80)
                 .offset(x: defaultOffset.width + dragOffset.width+160,y: defaultOffset.height + dragOffset.height+125)
             }//if end
-            
             
             //圆形进度条
             Gauge(value: count, in: 0...5){
@@ -181,10 +174,6 @@ struct BaseMapView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 30)
-//                    .clipShape(Circle())
-//                    .overlay(Circle()
-//                    .stroke(Color.white,lineWidth: 5))
-//                    .shadow(radius: 20)
                     .rotation3DEffect(
                         .degrees(animation),axis: (x: 0.0, y: 1.0, z: 0.2)
                     )
@@ -196,7 +185,7 @@ struct BaseMapView: View {
                 //获取按钮位置坐标的传值（动画发生的位置）
                     .offset(x:x,y:y)
             }//if end 动画启动判断
-            
+
             //道具栏
             VStack {
                 if itemBarButton {
@@ -221,7 +210,7 @@ struct BaseMapView: View {
                         .cornerRadius(50)
                         .opacity(itemBarOpacity)
                 }
-            }
+            }//道具栏VStack end
             .position(x:UIScreen.main.bounds.width - 50,y:UIScreen.main.bounds.height/2)
         }//ZStack end
         .gesture(

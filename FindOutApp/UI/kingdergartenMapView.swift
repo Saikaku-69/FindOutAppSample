@@ -15,9 +15,7 @@ struct kingdergartenMapView: View {
     @State var showkid4=true
     @State var showkid5=true
     @State var showkid6=true
-    
-    
-    
+ 
     @State var count : Double=0.0 //更新进度条
     @State var showAnimation=false//3D动画状态布尔值
     @State var animation=0.0//创建变量储存旋转角度
