@@ -9,12 +9,18 @@ import SwiftUI
 
 struct kingdergartenMapView: View {
     
-    @State var showkid1=true
-    @State var showkid2=true
-    @State var showkid3=true
-    @State var showkid4=true
-    @State var showkid5=true
-    @State var showkid6=true
+    @State var showYellowKid01=true
+    @State var showYellowkid02=true
+    
+    @State var showBlackKid01=true
+    @State var showBlackKid02=true
+    @State var showBlackKid03=true
+    @State var showBlackKid04=true
+
+    @State var showBrownKid01=true
+    @State var showBrownKid02=true
+    @State var showBrownKid03=true
+    @State var showBrownKid04=true
  
     @State var count : Double=0.0 //更新进度条
     @State var showAnimation=false//3D动画状态布尔值
@@ -38,22 +44,22 @@ struct kingdergartenMapView: View {
     
 var body: some View {
         ZStack {
-            Image("kingdergartenMap")
+            Image("basicKingdergartenMap")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .offset(x: defaultOffset.width + dragOffset.width,y: defaultOffset.height + dragOffset.height)
         
-            //kid1
-            if(showkid1){
+            //
+            if(showYellowKid01){
                 Button(
-                    action: {showkid1.toggle()
+                    action: {showYellowKid01.toggle()
                         x=defaultOffset.width + dragOffset.width+255
                         y=defaultOffset.height + dragOffset.height+44
                         showAnimation = true
-                        coinAnimation()
+                   //     coinAnimation()
                         count+=1
                     }, label: {
-                        Image("kid1")
+                        Image("yellowKid01")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 12,height: 28)
@@ -63,18 +69,18 @@ var body: some View {
                 
             }//if end
         
-            //kid2
-            if(showkid2){
+            //
+            if(showYellowkid02){
                 Button(
-                    action: {showkid2.toggle()
+                    action: {showYellowkid02.toggle()
                         
                         showAnimation = true
-                        coinAnimation()
+                     //   coinAnimation()
                         count+=1
                         x=defaultOffset.width + dragOffset.width+385
                         y=defaultOffset.height + dragOffset.height+72
                     }, label: {
-                        Image("kid2")
+                        Image("yellowkid02")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 25,height: 43)
@@ -84,18 +90,18 @@ var body: some View {
             }//if end
             
             
-            //kid3
-            if(showkid3){
+            //
+            if(showBlackKid01){
                 Button(
-                    action: {showkid3.toggle()
+                    action: {showBlackKid01.toggle()
                         
                         showAnimation = true
-                        coinAnimation()
+                   //     coinAnimation()
                         count+=1
                         x=defaultOffset.width + dragOffset.width+250
                         y=defaultOffset.height + dragOffset.height+190
                     }, label: {
-                        Image("kid3")
+                        Image("blackKid01")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 30,height: 55)
@@ -105,16 +111,16 @@ var body: some View {
             }//if end
             
             
-            //kid4
-            if(showkid4){
+            //
+            if(showBlackKid02){
                 Button(
-                    action: {showkid4.toggle()
+                    action: {showBlackKid02.toggle()
                         showAnimation = true
                         x=defaultOffset.width + dragOffset.width-50
                         y=defaultOffset.height + dragOffset.height+130
-                        coinAnimation()
+                   //     coinAnimation()
                         count+=1}, label: {
-                            Image("kid4")
+                            Image("blackKid02")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 20,height: 40)
@@ -124,17 +130,17 @@ var body: some View {
             }//if end
             
             
-            //kid5
-            if(showkid5){
+            //
+            if(showBlackKid03){
                 Button(
-                    action: {showkid5.toggle()
+                    action: {showBlackKid03.toggle()
                         x=defaultOffset.width + dragOffset.width-280
                         y=defaultOffset.height + dragOffset.height-100
                         showAnimation = true
-                        coinAnimation()
+                  //      coinAnimation()
                         count+=1
                     }, label: {
-                        Image("kid5")
+                        Image("blackKid03")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 35,height: 55)
@@ -145,17 +151,17 @@ var body: some View {
             }//if end
             
             
-            //kid6
-            if(showkid6){
+            //
+            if(showBlackKid04){
                 Button(
-                    action: {showkid6.toggle()
+                    action: {showBlackKid04.toggle()
                         x=defaultOffset.width + dragOffset.width+160
                         y=defaultOffset.height + dragOffset.height+125
                         showAnimation = true
-                        coinAnimation()
+                   //     coinAnimation()
                         count+=1
                     }, label: {
-                        Image("kid6")
+                        Image("blackKid04")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 40,height: 60)
@@ -164,6 +170,89 @@ var body: some View {
                 
                 .offset(x: defaultOffset.width + dragOffset.width+160,y: defaultOffset.height + dragOffset.height+125)
             }//if end
+            
+            
+            //
+            if(showBrownKid01){
+                Button(
+                    action: {showBrownKid01.toggle()
+                        
+                        showAnimation = true
+                     //   coinAnimation()
+                        count+=1
+                        x=defaultOffset.width + dragOffset.width+250
+                        y=defaultOffset.height + dragOffset.height+190
+                    }, label: {
+                        Image("brownKid01")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 30,height: 55)
+                            .clipped()
+                    })
+                .offset(x: defaultOffset.width + dragOffset.width+250,y: defaultOffset.height + dragOffset.height+190)
+            }//if end
+            
+            
+            //
+            if(showBrownKid02){
+                Button(
+                    action: {showBrownKid02.toggle()
+                        showAnimation = true
+                        x=defaultOffset.width + dragOffset.width-50
+                        y=defaultOffset.height + dragOffset.height+130
+                      //  coinAnimation()
+                        count+=1}, label: {
+                            Image("brownKid02")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 20,height: 40)
+                                .clipped()
+                        })
+                .offset(x: defaultOffset.width + dragOffset.width-50,y: defaultOffset.height + dragOffset.height+130)
+            }//if end
+            
+            
+            //
+            if(showBrownKid03){
+                Button(
+                    action: {showBrownKid03.toggle()
+                        x=defaultOffset.width + dragOffset.width-280
+                        y=defaultOffset.height + dragOffset.height-100
+                        showAnimation = true
+                      //  coinAnimation()
+                        count+=1
+                    }, label: {
+                        Image("brownKid03")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 35,height: 55)
+                            .clipped()
+                    })
+                
+                .offset(x: defaultOffset.width + dragOffset.width-280,y: defaultOffset.height + dragOffset.height-100)
+            }//if end
+            
+            
+            //
+            if(showBrownKid04){
+                Button(
+                    action: {showBrownKid04.toggle()
+                        x=defaultOffset.width + dragOffset.width+160
+                        y=defaultOffset.height + dragOffset.height+125
+                        showAnimation = true
+                       // coinAnimation()
+                        count+=1
+                    }, label: {
+                        Image("brownKid04")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 40,height: 60)
+                            .clipped()
+                    })
+                
+                .offset(x: defaultOffset.width + dragOffset.width+160,y: defaultOffset.height + dragOffset.height+125)
+            }//if end
+            
             
             
             //圆形进度条
