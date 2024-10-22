@@ -47,14 +47,38 @@ var body: some View {
             Image("basicKingdergartenMap")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .offset(x: defaultOffset.width + dragOffset.width,y: defaultOffset.height + dragOffset.height)
-        
+            
+//                .offset(x: defaultOffset.width + dragOffset.width,y: defaultOffset.height + dragOffset.height)
+            
+            //玩家需要找的元素
+            ForEach(itemlist) { item in
+                Button(action: {
+                    kidListData.findedNumber += 1
+                    if kidListData.findedNumber == kidListData.totalNumber {
+                        //如果找到的元素等于总数
+                        
+                    }
+                }) {
+                    Image(item.img)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: kidListData.shared.imgSize,
+                               height:kidListData.shared.imgSize)
+                }
+                .offset(item.offset)
+            }//ForEach  end
+            
+            
+            
+            
+            
+            
             //
             if(showYellowKid01){
                 Button(
                     action: {showYellowKid01.toggle()
-                        x=defaultOffset.width + dragOffset.width+255
-                        y=defaultOffset.height + dragOffset.height+44
+                        x=defaultOffset.width + dragOffset.width-316
+                        y=defaultOffset.height + dragOffset.height-123
                         showAnimation = true
                    //     coinAnimation()
                         count+=1
@@ -62,10 +86,10 @@ var body: some View {
                         Image("yellowKid01")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 12,height: 28)
+                            .frame(width: 4,height: 8)
                             .clipped()
                     })
-                .offset(x: defaultOffset.width + dragOffset.width+255,y: defaultOffset.height + dragOffset.height+44)
+                .offset(x: defaultOffset.width + dragOffset.width-316,y: defaultOffset.height + dragOffset.height-146)
                 
             }//if end
         
@@ -77,16 +101,16 @@ var body: some View {
                         showAnimation = true
                      //   coinAnimation()
                         count+=1
-                        x=defaultOffset.width + dragOffset.width+385
+                        x=defaultOffset.width + dragOffset.width+250
                         y=defaultOffset.height + dragOffset.height+72
                     }, label: {
                         Image("yellowkid02")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 25,height: 43)
+                            .frame(width: 25,height: 30)
                             .clipped()
                     })
-                .offset(x: defaultOffset.width + dragOffset.width+385,y: defaultOffset.height + dragOffset.height+72)
+                .offset(x: defaultOffset.width + dragOffset.width+200,y: defaultOffset.height + dragOffset.height+50)
             }//if end
             
             
@@ -104,14 +128,14 @@ var body: some View {
                         Image("blackKid01")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 30,height: 55)
+                            .frame(width: 20,height: 30)
                             .clipped()
                     })
-                .offset(x: defaultOffset.width + dragOffset.width+250,y: defaultOffset.height + dragOffset.height+190)
+                .offset(x: defaultOffset.width + dragOffset.width+350,y: defaultOffset.height + dragOffset.height+50)
             }//if end
             
             
-            //
+            //👌
             if(showBlackKid02){
                 Button(
                     action: {showBlackKid02.toggle()
@@ -123,14 +147,14 @@ var body: some View {
                             Image("blackKid02")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 20,height: 40)
+                                .frame(width: 5,height: 10)
                                 .clipped()
                         })
-                .offset(x: defaultOffset.width + dragOffset.width-50,y: defaultOffset.height + dragOffset.height+130)
+                .offset(x: defaultOffset.width + dragOffset.width-305,y: defaultOffset.height + dragOffset.height-115)
             }//if end
             
             
-            //
+            //👌
             if(showBlackKid03){
                 Button(
                     action: {showBlackKid03.toggle()
@@ -143,15 +167,15 @@ var body: some View {
                         Image("blackKid03")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 35,height: 55)
+                            .frame(width: 6,height: 13)
                             .clipped()
                     })
                 
-                .offset(x: defaultOffset.width + dragOffset.width-280,y: defaultOffset.height + dragOffset.height-100)
+                .offset(x: defaultOffset.width + dragOffset.width-136,y: defaultOffset.height + dragOffset.height-115)
             }//if end
             
             
-            //
+            //👌
             if(showBlackKid04){
                 Button(
                     action: {showBlackKid04.toggle()
@@ -164,15 +188,15 @@ var body: some View {
                         Image("blackKid04")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 40,height: 60)
+                            .frame(width: 10,height: 20)
                             .clipped()
                     })
                 
-                .offset(x: defaultOffset.width + dragOffset.width+160,y: defaultOffset.height + dragOffset.height+125)
+                .offset(x: defaultOffset.width + dragOffset.width+200,y: defaultOffset.height + dragOffset.height-177)
             }//if end
             
             
-            //
+            //👌
             if(showBrownKid01){
                 Button(
                     action: {showBrownKid01.toggle()
@@ -186,14 +210,14 @@ var body: some View {
                         Image("brownKid01")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 30,height: 55)
+                            .frame(width: 9,height:18)
                             .clipped()
                     })
-                .offset(x: defaultOffset.width + dragOffset.width+250,y: defaultOffset.height + dragOffset.height+190)
+                .offset(x: defaultOffset.width + dragOffset.width-24,y: defaultOffset.height + dragOffset.height-157)
             }//if end
             
             
-            //
+            //👌
             if(showBrownKid02){
                 Button(
                     action: {showBrownKid02.toggle()
@@ -205,14 +229,14 @@ var body: some View {
                             Image("brownKid02")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 20,height: 40)
+                                .frame(width: 10,height: 20)
                                 .clipped()
                         })
-                .offset(x: defaultOffset.width + dragOffset.width-50,y: defaultOffset.height + dragOffset.height+130)
+                .offset(x: defaultOffset.width + dragOffset.width-11,y: defaultOffset.height + dragOffset.height+60)
             }//if end
             
             
-            //
+            //👌
             if(showBrownKid03){
                 Button(
                     action: {showBrownKid03.toggle()
@@ -225,15 +249,15 @@ var body: some View {
                         Image("brownKid03")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 35,height: 55)
+                            .frame(width: 18,height: 36)
                             .clipped()
                     })
                 
-                .offset(x: defaultOffset.width + dragOffset.width-280,y: defaultOffset.height + dragOffset.height-100)
+                .offset(x: defaultOffset.width + dragOffset.width+150,y: defaultOffset.height + dragOffset.height-95)
             }//if end
             
             
-            //
+            //👌
             if(showBrownKid04){
                 Button(
                     action: {showBrownKid04.toggle()
@@ -246,11 +270,11 @@ var body: some View {
                         Image("brownKid04")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 40,height: 60)
+                            .frame(width: 12,height: 15)
                             .clipped()
                     })
                 
-                .offset(x: defaultOffset.width + dragOffset.width+160,y: defaultOffset.height + dragOffset.height+125)
+                .offset(x: defaultOffset.width + dragOffset.width+381,y: defaultOffset.height + dragOffset.height+160)
             }//if end
             
             
